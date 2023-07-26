@@ -28,8 +28,9 @@ function Navbar () {
   </button>
   <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div className="navbar-nav">
-      <a className="nav-item nav-link" href="/user/:id">quiz</a>
-      <a className="nav-item nav-link" href="/leaveAReview">Leave a review</a>
+      <a className="nav-item nav-link" href="/homepage">Home</a>
+      <a className="nav-item nav-link" href="/golfcoursedisplay">Find a course</a>
+      <a className="nav-item nav-link" href="/profile/:id">Profile</a>
       <a className="nav-item nav-link" onClick={handleLogout} href="/">Logout</a>
     </div>
   </div>

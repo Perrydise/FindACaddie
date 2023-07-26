@@ -25,8 +25,22 @@ function SignUp ({ setCurrentUser }) {
             if(res.ok){
                 res.json().then((returnedUser) => {
                   setCurrentUser(returnedUser)
+                  console.log(role.name)
+                  console.log(returnedUser.role)
+                  console.log(returnedUser.id)
                   console.log(returnedUser)
-                  navigate(`/user/${returnedUser.id}`)
+                  console.log(user)
+                  console.log(user.role)
+                  console.log(user.id)
+                  console.log(returnedUser)
+                  if (user.role === 'caddie') {
+                    navigate(`/caddiequiz/${returnedUser.id}`);
+                    return;
+                  }
+                  if (user.role === 'player') {
+                    navigate(`/playerquiz/${user.id}`);
+                    return;
+                  }        
                 })
                 
             } else {

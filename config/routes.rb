@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   
+  resources :golf_courses, only: [:index, :show]
   resources :users, only: [:show, :create, :update]
-  resources :skills, only: [:create]
+  resources :skills, only: [:create, :index]
   resources :roles, only: [:update]
+  resources :skills_users, only: [:create, :index]
+  resources :golf_courses_users, only: [:create]
+  resources :schedule_events, only: [:create]
   post "login", to: "sessions#create"
   delete "/logout" => "sessions#destroy"
   get "/auth", to: "users#show"
